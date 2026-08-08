@@ -1,0 +1,8 @@
+{
+    "name": "George Wallace",
+    "profile" : "test",
+    "maxLoops": 10,
+    "notifyCycle": true,
+    "notifyCycleInfo": true,
+    "debug": true
+}
