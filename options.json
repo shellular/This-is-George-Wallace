@@ -4,5 +4,11 @@
     "maxLoops": 10,
     "notifyCycle": true,
     "notifyCycleInfo": true,
-    "debug": true
+    "multiPressMode": true,
+    "debug": true,
+    "minWaitTime": 0.01,
+    "maxWaitTime": 1,
+    "altWaitMethodVariableFromAverage": true,
+    "altAverageWaitTime": 1,
+    "altVariance": 0.5
 }
