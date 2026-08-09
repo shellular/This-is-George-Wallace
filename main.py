@@ -8,6 +8,7 @@ from pynput.keyboard import Key, Controller
 import sys #just to have the program kill itself if it loads weird
 import threading
 import os
+import pyttsx3
 
 kb = Controller() # <--this guy is wallace's fingies. we can control his fingies now
 options = None
@@ -63,6 +64,24 @@ executioner.daemon = True
 executioner.start()
 
 cycle = 0
+def tts(text):
+    def miniTTS():
+        try:
+            voice = pyttsx3.init()
+
+            #speech rate
+            rate = voice.getProperty('rate')
+
+            voice.setProperty(rate, 150)
+            voice.say(text)
+            voice.runAndWait()
+        except:
+            print("george wallace tried to speak but was repressed by Big Bro.")
+
+    voiceThread = threading.Thread(target=miniTTS, daemon=True)
+    #start
+    voiceThread.start()
+
 
 while True:
     cycle += 1
@@ -85,7 +104,10 @@ while True:
         for i in range(sentenceIterations):
             sentence = sentence + random.choice(wordlist["words"]) + " "
 
-        print(sentence)
+        print(f"\nGeorge Wallace writes in:\n\"{sentence}\"\n")
+
+        if options["speaks"]:
+            tts(sentence)
 
     time.sleep(timeToWait)
     

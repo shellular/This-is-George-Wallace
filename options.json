@@ -1,16 +1,17 @@
 {
     "name": "George Wallace",
-    "profile" : "striveGear",
+    "profile" : "striveGear copy",
     "maxLoops": 10,
-    "notifyCycle": true,
-    "notifyCycleInfo": true,
+    "notifyCycle": false,
+    "notifyCycleInfo": false,
     "multiPressMode": true,
-    "debug": true,
-    "minWaitTime": 0.01,
-    "maxWaitTime": 1,
+    "debug": false,
+    "minWaitTime": 3,
+    "maxWaitTime": 3,
     "altWaitMethodVariableFromAverage": false,
     "altAverageWaitTime": 1,
     "altVariance": 0.5,
-    "wordsChance": 100,
-    "sentenceLengthMax": 12
+    "wordsChance": 40,
+    "sentenceLengthMax": 6,
+    "speaks": true
 }
