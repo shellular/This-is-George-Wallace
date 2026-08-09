@@ -37,6 +37,7 @@ def tryLoneInput(profileinput):
 
 try:
     options = basicFunctionUtil.loadFileAsJSON(f"./options.json")
+    wordlist = basicFunctionUtil.loadFileAsJSON(f"./words.json")
     profile = basicFunctionUtil.loadFileAsJSON(f"./profiles/{options["profile"]}.json")
 
     if options["debug"]:
@@ -73,10 +74,19 @@ while True:
 
     #time.sleep determinable in options.json
     if not options["altWaitMethodVariableFromAverage"]:
-        timeToWait(random.uniform(options["minWaitTime"], options["maxWaitTime"]))
+        timeToWait= random.uniform(options["minWaitTime"], options["maxWaitTime"])
     else:
         timeToWait = options["altAverageWaitTime"] + random.uniform(options["altVariance"] * -1, options["altVariance"])
-        
+
+    if int(options["wordsChance"]) >= random.randint(0, 100):
+        sentence = ""
+        sentenceIterations = random.randint(1, options["sentenceLengthMax"])
+
+        for i in range(sentenceIterations):
+            sentence = sentence + random.choice(wordlist["words"]) + " "
+
+        print(sentence)
+
     time.sleep(timeToWait)
     
 
