@@ -6,12 +6,12 @@
     "notifyCycleInfo": false,
     "multiPressMode": true,
     "debug": false,
-    "minWaitTime": 3,
-    "maxWaitTime": 3,
+    "minWaitTime": 0.5,
+    "maxWaitTime": 1.5,
     "altWaitMethodVariableFromAverage": false,
     "altAverageWaitTime": 1,
     "altVariance": 0.5,
-    "wordsChance": 40,
+    "wordsChance": 20,
     "sentenceLengthMax": 6,
     "speaks": true
 }
